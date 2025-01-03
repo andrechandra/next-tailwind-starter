@@ -21,7 +21,6 @@ import {
   Check,
   X,
   ArrowRight,
-  ArrowLeft,
 } from 'lucide-react'
 
 export function ComponentGrid() {
