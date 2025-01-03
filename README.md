@@ -123,7 +123,7 @@ npx shadcn-ui@latest add [component-name]
 
 This template is ready to be deployed to Vercel. Click the button below to deploy:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/next-tailwind-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AndreChips/next-tailwind-starter)
 
 ## 🤝 Contributing
 

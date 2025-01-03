@@ -25,7 +25,7 @@ export default function Home() {
             </Button>
             <Button variant="outline" asChild>
               <a
-                href="https://github.com/yourusername/your-repo"
+                href="https://github.com/AndreChips/next-tailwind-starter"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -39,13 +39,13 @@ export default function Home() {
       <footer className="py-6 text-center text-xs sm:text-sm text-muted-foreground">
         <b>
           © {new Date().getFullYear()}{' '}
-          <Button variant="link" asChild className="p-0 h-auto font-bold">
+          <Button variant="link_right" asChild className="p-0 h-auto font-bold">
             <Link href="https://github.com/AndreChips">Andre Chandra</Link>
           </Button>
           . All rights reserved. <br />
         </b>
         Inspired by{' '}
-        <Button variant="link" asChild className="p-0 h-auto font-bold">
+        <Button variant="link_right" asChild className="p-0 h-auto font-bold">
           <Link href="https://theodorusclarence.com">Theodorus Clarence</Link>
         </Button>
       </footer>
