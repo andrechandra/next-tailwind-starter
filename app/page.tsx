@@ -33,6 +33,29 @@ export default function Home() {
               </a>
             </Button>
           </div>
+          <div className="mt-4">
+            <Button
+              asChild
+              variant="outline"
+              className="flex items-center gap-2"
+            >
+              <Link
+                href="https://vercel.com/new/clone?repository-url=https://github.com/andrechandra/next-tailwind-starter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/vercel.svg"
+                  alt="Vercel Logo"
+                  width={20}
+                  height={20}
+                  className="w-4 h-4 invert dark:invert-0"
+                />
+                Deploy to Vercel
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
 

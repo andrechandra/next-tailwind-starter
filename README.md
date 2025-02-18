@@ -2,9 +2,6 @@
 
 A modern, feature-rich starter template built with Next.js, Tailwind CSS, TypeScript, and shadcn/ui. Perfect for building scalable web applications with best practices and developer experience in mind.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-
 ## 🚀 Features
 
 - ⚡️ **Next.js 14** with App Router and Server Components

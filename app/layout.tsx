@@ -22,16 +22,8 @@ export const metadata: Metadata = {
   description:
     'A starter template with Next.js, Tailwind CSS, TypeScript, and shadcn/ui',
   icons: {
-    icon: [
-      {
-        media: '(prefers-color-scheme: light)',
-        url: '@/public/vercel.svg',
-      },
-      {
-        media: '(prefers-color-scheme: dark)',
-        url: '@/public/vercel.svg',
-      },
-    ],
+    icon: [{ url: '/images/logo.svg', type: 'image/svg+xml' }],
+    shortcut: '/images/logo.svg',
   },
 }
 
