@@ -17,6 +17,7 @@ import {
   Check,
   X,
 } from 'lucide-react'
+import Link from 'next/link'
 
 export function ComponentGrid() {
   return (
@@ -93,7 +94,7 @@ export function ComponentGrid() {
           </CardHeader>
           <CardContent>
             <Button asChild>
-              <a href="/404">Visit the 404 page</a>
+              <Link href="/404">Visit the 404 page</Link>
             </Button>
           </CardContent>
         </Card>
