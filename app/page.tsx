@@ -17,7 +17,7 @@ export default function Home() {
           <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl">
             A starter template for building modern web applications with
             Next.js, Tailwind CSS, and shadcn/ui components. Pre-configured with
-            TypeScript and ESLint.
+            TypeScript, Husky, and ESLint.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild>

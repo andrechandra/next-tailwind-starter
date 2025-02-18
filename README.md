@@ -13,6 +13,8 @@ A modern, feature-rich starter template built with Next.js, Tailwind CSS, TypeSc
 - 🎨 **shadcn/ui** for beautiful, accessible components
 - 🧪 **Jest** and **React Testing Library** for testing
 - 📝 **ESLint** and **Prettier** for code quality
+- 🐶 **Husky** for Git hooks
+- 🚫 **lint-staged** for pre-commit code quality checks
 - 📱 Fully responsive design
 - 🌙 Dark mode support
 - 🔧 Absolute imports
@@ -24,34 +26,26 @@ A modern, feature-rich starter template built with Next.js, Tailwind CSS, TypeSc
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn or pnpm
+- pnpm (recommended)
 
 ### Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/AndreChips/next-tailwind-starter.git
+git clone https://github.com/andrechandra/next-tailwind-starter.git
 cd next-tailwind-starter
 ```
 
 2. Install dependencies:
 
 ```bash
-npm install
-# or
-yarn install
-# or
 pnpm install
 ```
 
 3. Run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
@@ -61,69 +55,46 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```
 .
-├── __tests__/          # Test files
-├── public/            # Static files
+├── .husky/         # Git hooks
 ├── app/          # App router pages
 ├── components/   # React components
 │   ├── ui/      # shadcn/ui components
 │   └── ...      # Custom components
 ├── lib/         # Utility functions
+├── public/            # Static files
 ├── .eslintrc.json  # ESLint configuration
 ├── .prettierrc     # Prettier configuration
 ├── jest.config.js  # Jest configuration
-└── tailwind.config.js # Tailwind configuration
-```
-
-## 🧪 Testing
-
-Run tests with:
-
-```bash
-npm run test
-# or
-yarn test
-```
-
-## 🎨 Customization
-
-### Tailwind CSS
-
-Customize your theme in `tailwind.config.js`:
-
-```js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        // Add your colors
-      },
-    },
-  },
-}
-```
-
-### shadcn/ui Components
-
-Add new components using the CLI:
-
-```bash
-npx shadcn-ui@latest add [component-name]
+└── tailwind.config.ts # Tailwind configuration
 ```
 
 ## 📝 Scripts
 
-- `dev` - Start development server
-- `build` - Build for production
-- `start` - Start production server
-- `test` - Run tests
-- `lint` - Run ESLint
-- `format` - Format code with Prettier
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm test` - Run tests
+- `pnpm lint` - Run ESLint
+- `pnpm format` - Format code with Prettier
+
+## 🔄 Git Hooks
+
+This template uses Husky and lint-staged to ensure code quality before commits:
+
+- Pre-commit: Runs ESLint and Prettier on staged files
+- Pre-push: Runs tests and type checking
+
+To skip hooks temporarily, use the `--no-verify` flag:
+
+```bash
+git commit -m "Your message" --no-verify
+```
 
 ## 🚀 Deployment
 
 This template is ready to be deployed to Vercel. Click the button below to deploy:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AndreChips/next-tailwind-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/andrechandra/next-tailwind-starter)
 
 ## 🤝 Contributing
 
@@ -145,3 +116,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [shadcn/ui](https://ui.shadcn.com/)
+- [Husky](https://typicode.github.io/husky/)
+- [lint-staged](https://github.com/okonet/lint-staged)
