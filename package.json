@@ -9,10 +9,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "test": "jest",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,css,md}": "prettier --write"
+    "prepare": "husky",
+    "lint:fix": "eslint --fix . && prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
@@ -55,5 +53,14 @@
     "prettier": "^3.5.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "**/*.{json,css,scss,md,webmanifest}": [
+      "prettier --write"
+    ]
   }
 }
