@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -9,9 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Shield,
   Plus,
@@ -20,12 +16,9 @@ import {
   CreditCard,
   Check,
   X,
-  ArrowRight,
 } from 'lucide-react'
 
 export function ComponentGrid() {
-  const [email, setEmail] = useState('')
-
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -37,26 +30,12 @@ export function ComponentGrid() {
           <CardContent className="flex gap-4 flex-wrap">
             <Button>Primary Variant</Button>
             <Button variant="secondary">Secondary Variant</Button>
-            <Button variant="primary">Primary Button</Button>
-            <Button variant="outline_primary">Outline Primary</Button>
-            <Button variant="ghost_primary">Ghost Primary</Button>
-            <Button variant="dark">Dark Variant</Button>
-            <Button variant="light">Light Variant</Button>
-            <Button variant="underline">Underline Animation</Button>
-            <Button variant="arrow">
-              Arrow Button{' '}
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="direction_left">
-              <ArrowRight />
-              Left Direction
-            </Button>
-            <Button variant="direction_right">
-              Right Direction
-              <ArrowRight />
-            </Button>
-            <Button variant="polymorphic">Polymorphic Effect</Button>
-            <Button variant="polymorphic_outline">Polymorphic Outline</Button>
+            <Button variant="outline">Outline Variant</Button>
+            <Button variant="ghost">Ghost Variant</Button>
+            <Button variant="link">Link Variant</Button>
+            <Button variant="destructive">Destructive Variant</Button>
+            <Button size="sm">Small Size</Button>
+            <Button size="lg">Large Size</Button>
           </CardContent>
         </Card>
 
@@ -81,44 +60,6 @@ export function ComponentGrid() {
             <Button size="icon">
               <CreditCard className="h-4 w-4" />
             </Button>
-          </CardContent>
-        </Card>
-
-        <Card className="md:col-span-2 lg:col-span-2">
-          <CardHeader>
-            <CardTitle>Input Field</CardTitle>
-            <CardDescription>Standard input with label</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              placeholder="Enter your email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </CardContent>
-        </Card>
-
-        <Card className="md:col-span-2 lg:col-span-2">
-          <CardHeader>
-            <CardTitle>Tabs</CardTitle>
-            <CardDescription>Switch between different views</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Tabs defaultValue="account" className="w-full">
-              <TabsList>
-                <TabsTrigger value="account">Account</TabsTrigger>
-                <TabsTrigger value="password">Password</TabsTrigger>
-              </TabsList>
-              <TabsContent value="account">
-                Make changes to your account here.
-              </TabsContent>
-              <TabsContent value="password">
-                Change your password here.
-              </TabsContent>
-            </Tabs>
           </CardContent>
         </Card>
 

@@ -17,7 +17,7 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: 'Next.js Starter Template',
+  title: 'Next.js + Tailwind CSS Starter Template',
   description:
     'A starter template with Next.js, Tailwind CSS, TypeScript, and shadcn/ui',
   icons: {

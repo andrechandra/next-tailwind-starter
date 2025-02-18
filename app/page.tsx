@@ -25,7 +25,7 @@ export default function Home() {
             </Button>
             <Button variant="outline" asChild>
               <a
-                href="https://github.com/AndreChips/next-tailwind-starter"
+                href="https://github.com/andrechandra/next-tailwind-starter"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,7 +40,7 @@ export default function Home() {
         <b>
           © {new Date().getFullYear()}{' '}
           <Button variant="link_right" asChild className="p-0 h-auto font-bold">
-            <Link href="https://github.com/AndreChips">Andre Chandra</Link>
+            <Link href="https://github.com/andrechandra">Andre Chandra</Link>
           </Button>
           . All rights reserved. <br />
         </b>
