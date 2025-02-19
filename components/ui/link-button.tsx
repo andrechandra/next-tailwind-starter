@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'text-primary underline-offset-4 hover:underline',
+        unstyled_link: 'text-primary',
         underline_link_left:
           'text-primary border-b border-dotted border-black dark:border-white relative w-fit after:absolute after:w-full after:scale-x-0 after:h-[0.05rem] after:bottom-0 after:left-0 after:origin-left after:bg-black dark:after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-right',
         underline_link_right:
@@ -17,13 +17,13 @@ const buttonVariants = cva(
       },
       size: {
         default: 'h-7',
-        sm: 'h-6',
-        lg: 'h-8',
+        small: 'h-6',
+        large: 'h-8',
         icon: 'h-7 w-7',
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'unstyled_link',
       size: 'default',
     },
   }

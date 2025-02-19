@@ -1,4 +1,5 @@
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/link-button'
+import { ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -20,11 +21,12 @@ export default function ErrorPage() {
           changed, or is temporarily unavailable.
         </p>
         <div className="pt-4">
-          <Link href="/">
-            <Button variant="link_left" className="text-black dark:text-white ">
-              Return to homepage
-            </Button>
-          </Link>
+          <LinkButton variant="underline_link_left" asChild>
+            <Link href="/" className="flex items-center group">
+              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+              Back to Home
+            </Link>
+          </LinkButton>
         </div>
       </div>
     </main>
