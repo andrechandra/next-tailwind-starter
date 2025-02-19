@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import Link from 'next/link'
+import { LinkButton } from '@/components/ui/link-button'
 
 export default function Home() {
   return (
@@ -62,15 +63,23 @@ export default function Home() {
       <footer className="py-6 text-center text-xs sm:text-sm text-muted-foreground">
         <b>
           © {new Date().getFullYear()}{' '}
-          <Button variant="link_right" asChild className="p-0 h-auto font-bold">
+          <LinkButton
+            variant="underline_link_right"
+            asChild
+            className="p-0 h-auto font-bold"
+          >
             <Link href="https://github.com/andrechandra">Andre Chandra</Link>
-          </Button>
+          </LinkButton>
           . All rights reserved. <br />
         </b>
         Inspired by{' '}
-        <Button variant="link_right" asChild className="p-0 h-auto font-bold">
+        <LinkButton
+          variant="underline_link_right"
+          asChild
+          className="p-0 h-auto font-bold"
+        >
           <Link href="https://theodorusclarence.com">Theodorus Clarence</Link>
-        </Button>
+        </LinkButton>
       </footer>
     </main>
   )
