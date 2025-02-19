@@ -54,6 +54,9 @@ export default {
         inter: ['var(--font-inter)'],
         merriweather: ['var(--font-merriweather)'],
       },
+      cursor: {
+        'external-pointer': 'var(--external-cursor)',
+      },
     },
   },
   plugins: [tailwindcssAnimate],

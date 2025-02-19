@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --external-cursor: url('/cursor/external.svg') 4 4, auto;
+}
+
+.dark {
+  --external-cursor: url('/cursor/external-dark.svg') 4 4, auto;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

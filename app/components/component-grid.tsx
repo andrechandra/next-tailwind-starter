@@ -39,7 +39,12 @@ export function ComponentGrid() {
           <CardContent className="flex gap-4 flex-wrap">
             <LinkButton variant="unstyled_link">Internal Links</LinkButton>
             <Separator orientation="vertical" />
-            <LinkButton variant="unstyled_link">External Links</LinkButton>
+            <LinkButton
+              variant="unstyled_link"
+              className="cursor-[var(--external-cursor)]"
+            >
+              External Links
+            </LinkButton>
           </CardContent>
         </Card>
 
@@ -59,10 +64,16 @@ export function ComponentGrid() {
               Internal Links
             </LinkButton>
             <Separator orientation="vertical" />
-            <LinkButton variant="underline_link_right">
+            <LinkButton
+              variant="underline_link_right"
+              className="cursor-[var(--external-cursor)]"
+            >
               External Links
             </LinkButton>
-            <LinkButton variant="underline_link_left">
+            <LinkButton
+              variant="underline_link_left"
+              className="cursor-[var(--external-cursor)]"
+            >
               External Links
             </LinkButton>
           </CardContent>
@@ -90,13 +101,21 @@ export function ComponentGrid() {
               </Link>
             </LinkButton>
             <Separator orientation="vertical" />
-            <LinkButton variant="underline_link_right" asChild>
+            <LinkButton
+              variant="underline_link_right"
+              asChild
+              className="cursor-[var(--external-cursor)]"
+            >
               <Link href="/" className="flex items-center group">
                 External Links
                 <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </LinkButton>
-            <LinkButton variant="underline_link_left" asChild>
+            <LinkButton
+              variant="underline_link_left"
+              asChild
+              className="cursor-[var(--external-cursor)]"
+            >
               <Link href="/" className="flex items-center group">
                 <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 External Links
