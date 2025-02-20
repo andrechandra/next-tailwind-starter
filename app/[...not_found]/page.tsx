@@ -23,7 +23,7 @@ export default function ErrorPage() {
         <div className="pt-4">
           <LinkButton variant="underline_link_left" asChild>
             <Link href="/" className="flex items-center group">
-              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" 
+              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to Home
             </Link>
           </LinkButton>

@@ -1,12 +1,18 @@
 {
   "extends": [
     "next/core-web-vitals",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
     "prettier"
   ],
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "no-console": "warn",
+    "no-undef": "error"
   }
 }
