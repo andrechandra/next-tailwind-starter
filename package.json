@@ -9,7 +9,7 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "test": "jest",
-    "prepare": "husky",
+    "prepare": "husky install",
     "lint:fix": "eslint --fix . && prettier --write ."
   },
   "dependencies": {

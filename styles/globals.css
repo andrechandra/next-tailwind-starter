@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Properties - System */
+:root {
+  /* System Tokens */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  
+  /* Cursor Tokens */
+  --external-cursor: url('/cursor/external.svg') 4 4, auto;
+}
+
+.dark {
+  --external-cursor: url('/cursor/external-dark.svg') 4 4, auto;
+}
+
+/* Theme Configuration */
+@layer base {
+  :root {
+    /* Color Scheme - Light */
+    --color-background: rgb(255, 255, 255);    /* White */
+    --color-foreground: rgb(10, 10, 10);       /* Almost Black */
+    
+    /* Surface Colors */
+    --color-card: var(--color-background);
+    --color-card-foreground: var(--color-foreground);
+    --color-popover: var(--color-background);
+    --color-popover-foreground: var(--color-foreground);
+    
+    /* UI Colors */
+    --color-primary: rgb(23, 23, 23);          /* Dark Gray */
+    --color-primary-foreground: rgb(250, 250, 250); /* Off White */
+    --color-secondary: rgb(245, 245, 245);     /* Light Gray */
+    --color-secondary-foreground: rgb(23, 23, 23); /* Dark Gray */
+    --color-muted: rgb(245, 245, 245);         /* Light Gray */
+    --color-muted-foreground: rgb(115, 115, 115); /* Medium Gray */
+    --color-accent: rgb(245, 245, 245);        /* Light Gray */
+    --color-accent-foreground: rgb(23, 23, 23); /* Dark Gray */
+    
+    /* Semantic Colors */
+    --color-destructive: rgb(239, 68, 68);     /* Red */
+    --color-destructive-foreground: rgb(250, 250, 250); /* Off White */
+    
+    /* Border & Input Colors */
+    --color-border: rgb(229, 229, 229);        /* Light Gray */
+    --color-input: rgb(229, 229, 229);         /* Light Gray */
+    --color-ring: rgb(10, 10, 10);             /* Almost Black */
+    
+    /* Chart Colors */
+    --color-chart-1: rgb(240, 96, 72);         /* Coral */
+    --color-chart-2: rgb(46, 147, 147);        /* Teal */
+    --color-chart-3: rgb(41, 63, 74);          /* Dark Blue Gray */
+    --color-chart-4: rgb(242, 187, 51);        /* Golden */
+    --color-chart-5: rgb(242, 123, 48);        /* Orange */
+    
+    /* Border Radius */
+    --radius: var(--radius-md);
+  }
+
+  .dark {
+    /* Color Scheme - Dark */
+    --color-background: rgb(10, 10, 10);       /* Almost Black */
+    --color-foreground: rgb(250, 250, 250);    /* Off White */
+    
+    /* Surface Colors */
+    --color-card: var(--color-background);
+    --color-card-foreground: var(--color-foreground);
+    --color-popover: var(--color-background);
+    --color-popover-foreground: var(--color-foreground);
+    
+    /* UI Colors */
+    --color-primary: rgb(250, 250, 250);       /* Off White */
+    --color-primary-foreground: rgb(23, 23, 23); /* Dark Gray */
+    --color-secondary: rgb(38, 38, 38);        /* Dark Gray */
+    --color-secondary-foreground: rgb(250, 250, 250); /* Off White */
+    --color-muted: rgb(38, 38, 38);            /* Dark Gray */
+    --color-muted-foreground: rgb(163, 163, 163); /* Light Gray */
+    --color-accent: rgb(38, 38, 38);           /* Dark Gray */
+    --color-accent-foreground: rgb(250, 250, 250); /* Off White */
+    
+    /* Semantic Colors */
+    --color-destructive: rgb(127, 29, 29);     /* Dark Red */
+    --color-destructive-foreground: rgb(250, 250, 250); /* Off White */
+    
+    /* Border & Input Colors */
+    --color-border: rgb(38, 38, 38);           /* Dark Gray */
+    --color-input: rgb(38, 38, 38);            /* Dark Gray */
+    --color-ring: rgb(212, 212, 212);          /* Light Gray */
+    
+    /* Chart Colors */
+    --color-chart-1: rgb(51, 122, 183);        /* Blue */
+    --color-chart-2: rgb(69, 145, 120);        /* Green */
+    --color-chart-3: rgb(225, 151, 51);        /* Orange */
+    --color-chart-4: rgb(147, 83, 166);        /* Purple */
+    --color-chart-5: rgb(217, 83, 113);        /* Pink */
+  }
+
+  /* Global Styles */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}

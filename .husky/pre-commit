@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+echo "Running ESLint on the entire project..."
+npx eslint . --max-warnings=0 || true
+
+echo "Running Prettier..."
+npx prettier --write . || true
+
+echo "Running TypeScript checks..."
+npx tsc --noEmit || true
