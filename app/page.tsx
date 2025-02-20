@@ -72,14 +72,6 @@ export default function Home() {
           </LinkButton>
           . All rights reserved. <br />
         </b>
-        Inspired by{' '}
-        <LinkButton
-          variant="underline_link_right"
-          asChild
-          className="p-0 h-auto font-bold"
-        >
-          <Link href="https://theodorusclarence.com">Theodorus Clarence</Link>
-        </LinkButton>
       </footer>
     </main>
   )
