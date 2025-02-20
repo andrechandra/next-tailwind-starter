@@ -89,6 +89,6 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-sans), sans-serif;
   }
 }

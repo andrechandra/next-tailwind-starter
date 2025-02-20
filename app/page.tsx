@@ -1,21 +1,18 @@
-import { Button } from '@/components/ui/button'
-import { ThemeToggle } from '@/components/theme-toggle'
 import Link from 'next/link'
-import { LinkButton } from '@/components/ui/link-button'
+import { Button } from '@/components/ui/button'
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
+      <Navbar />
       <div className="container mx-auto px-8 md:px-16 py-16 flex-1 flex flex-col">
-        <nav className="flex justify-end items-center">
-          <ThemeToggle />
-        </nav>
-
-        <div className="flex-1 flex flex-col items-center justify-center text-center space-y-8">
-          <h1 className="font-inter space-y-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter">
+        <div className="flex-1 flex flex-col items-center justify-center text-center space-y-4">
+          <h1 className="font-poppins font-extrabold leading-tight tracking-tighter space-y-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             Next.js + Tailwind CSS + shadcn/ui Starter
           </h1>
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl">
+          <p className="text-xs sm:text-xs md:text-sm lg:text-base text-muted-foreground max-w-2xl">
             A starter template for building modern web applications with
             Next.js, Tailwind CSS, and shadcn/ui components. Pre-configured with
             TypeScript, Husky, and ESLint.
@@ -34,7 +31,7 @@ export default function Home() {
               </a>
             </Button>
           </div>
-          <div className="mt-4">
+          <div>
             <Button
               asChild
               variant="outline"
@@ -59,20 +56,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <footer className="py-6 text-center text-xs sm:text-sm text-muted-foreground">
-        <b>
-          © {new Date().getFullYear()}{' '}
-          <LinkButton
-            variant="underline_link_right"
-            asChild
-            className="p-0 h-auto font-bold"
-          >
-            <Link href="https://github.com/andrechandra">Andre Chandra</Link>
-          </LinkButton>
-          . All rights reserved. <br />
-        </b>
-      </footer>
+      <Footer />
     </main>
   )
 }

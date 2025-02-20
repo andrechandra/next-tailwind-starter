@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { ThemeToggle } from '@/components/theme-toggle'
 import { ComponentGrid } from '@/app/components/component-grid'
 import { LinkButton } from '@/components/ui/link-button'
 
@@ -14,7 +13,6 @@ export default function ComponentsPage() {
             Back to Home
           </Link>
         </LinkButton>
-        <ThemeToggle />
       </nav>
 
       <div className="space-y-8">

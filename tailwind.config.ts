@@ -50,8 +50,9 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
+        inter: ['var(--font-sans)'],
+        jetbrains: ['var(--font-mono)'],
         poppins: ['var(--font-poppins)'],
-        inter: ['var(--font-inter)'],
         merriweather: ['var(--font-merriweather)'],
       },
       cursor: {
