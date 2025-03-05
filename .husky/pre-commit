@@ -1,11 +1,8 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "Running ESLint..."
 npx lint-staged
 
 echo "Running Prettier..."
-npx prettier --check . || exit 1
+npx prettier --write . || exit 1
 
 echo "Running TypeScript checks..."
 npx tsc --noEmit || exit 1
