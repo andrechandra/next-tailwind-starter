@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/footer'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
-      <div className="container mx-auto px-8 md:px-16 py-16 flex-1 flex flex-col pt-28">
+      <div className="container mx-auto px-8 md:px-16 py-16 flex-1 flex flex-col">
+        <nav className="flex justify-end items-center">
+          <ThemeToggle />
+        </nav>
         <div className="flex-1 flex flex-col items-center justify-center text-center space-y-4">
           <h1 className="font-poppins font-extrabold leading-tight tracking-tighter space-y-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             Next.js + Tailwind CSS + shadcn/ui Starter

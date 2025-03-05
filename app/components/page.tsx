@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { ComponentGrid } from '@/app/components/component-grid'
 import { LinkButton } from '@/components/ui/link-button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function ComponentsPage() {
   return (
@@ -13,6 +14,7 @@ export default function ComponentsPage() {
             Back to Home
           </Link>
         </LinkButton>
+        <ThemeToggle />
       </nav>
 
       <div className="space-y-8">
