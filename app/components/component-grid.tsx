@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { LinkButton } from '@/components/ui/link-button'
 import { Separator } from '@/components/ui/separator'
 import {
   Shield,
@@ -37,14 +36,13 @@ export function ComponentGrid() {
             <CardDescription>Link buttons with no style.</CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <LinkButton variant="unstyled_link">Internal Links</LinkButton>
+            <Button isLink variant="link">
+              Internal Links
+            </Button>
             <Separator orientation="vertical" />
-            <LinkButton
-              variant="unstyled_link"
-              className="cursor-[var(--external-cursor)]"
-            >
+            <Button isLink isExternal variant="link">
               External Links
-            </LinkButton>
+            </Button>
           </CardContent>
         </Card>
 
@@ -57,25 +55,19 @@ export function ComponentGrid() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <LinkButton variant="underline_link_right">
+            <Button isLink variant="link_right">
               Internal Links
-            </LinkButton>
-            <LinkButton variant="underline_link_left">
+            </Button>
+            <Button isLink variant="link_left">
               Internal Links
-            </LinkButton>
+            </Button>
             <Separator orientation="vertical" />
-            <LinkButton
-              variant="underline_link_right"
-              className="cursor-[var(--external-cursor)]"
-            >
+            <Button isLink isExternal variant="link_right">
               External Links
-            </LinkButton>
-            <LinkButton
-              variant="underline_link_left"
-              className="cursor-[var(--external-cursor)]"
-            >
+            </Button>
+            <Button isLink isExternal variant="link_left">
               External Links
-            </LinkButton>
+            </Button>
           </CardContent>
         </Card>
 
@@ -88,39 +80,31 @@ export function ComponentGrid() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <LinkButton variant="underline_link_right" asChild>
+            <Button isLink variant="link_right" asChild>
               <Link href="/" className="flex items-center group">
                 Internal Links
                 <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-            </LinkButton>
-            <LinkButton variant="underline_link_left" asChild>
+            </Button>
+            <Button isLink variant="link_left" asChild>
               <Link href="/" className="flex items-center group">
                 <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 Internal Links
               </Link>
-            </LinkButton>
+            </Button>
             <Separator orientation="vertical" />
-            <LinkButton
-              variant="underline_link_right"
-              asChild
-              className="cursor-[var(--external-cursor)]"
-            >
+            <Button isLink isExternal variant="link_right" asChild>
               <Link href="/" className="flex items-center group">
                 External Links
                 <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-            </LinkButton>
-            <LinkButton
-              variant="underline_link_left"
-              asChild
-              className="cursor-[var(--external-cursor)]"
-            >
+            </Button>
+            <Button isLink isExternal variant="link_left" asChild>
               <Link href="/" className="flex items-center group">
                 <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 External Links
               </Link>
-            </LinkButton>
+            </Button>
           </CardContent>
         </Card>
 
