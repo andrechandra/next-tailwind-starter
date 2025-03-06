@@ -80,28 +80,50 @@ export function ComponentGrid() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <Button isLink variant="link_right" asChild>
+            <Button
+              isLink
+              variant="link_right"
+              rightIcon={<ChevronRight />}
+              iconAnimation="slide"
+              asChild
+            >
               <Link href="/" className="flex items-center group">
                 Internal Links
-                <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button isLink variant="link_left" asChild>
+            <Button
+              isLink
+              variant="link_left"
+              leftIcon={<ChevronLeft />}
+              iconAnimation="slide"
+              asChild
+            >
               <Link href="/" className="flex items-center group">
-                <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 Internal Links
               </Link>
             </Button>
             <Separator orientation="vertical" />
-            <Button isLink isExternal variant="link_right" asChild>
+            <Button
+              isLink
+              isExternal
+              variant="link_right"
+              rightIcon={<ChevronRight />}
+              iconAnimation="slide"
+              asChild
+            >
               <Link href="/" className="flex items-center group">
                 External Links
-                <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button isLink isExternal variant="link_left" asChild>
+            <Button
+              isLink
+              isExternal
+              variant="link_left"
+              leftIcon={<ChevronLeft />}
+              iconAnimation="slide"
+              asChild
+            >
               <Link href="/" className="flex items-center group">
-                <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 External Links
               </Link>
             </Button>
@@ -126,30 +148,36 @@ export function ComponentGrid() {
               <Button variant="destructive">Destructive Variant</Button>
             </div>
             <div className="flex gap-4">
-              <Button>
-                <PlusIcon />
+              <Button leftIcon={<PlusIcon />} rightIcon={<MinusIcon />}>
                 Icon
-                <MinusIcon />
               </Button>
-              <Button variant="secondary">
-                <PlusIcon />
+              <Button
+                variant="secondary"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button variant="outline">
-                <PlusIcon />
+              <Button
+                variant="outline"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button variant="ghost">
-                <PlusIcon />
+              <Button
+                variant="ghost"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button variant="destructive">
-                <PlusIcon />
+              <Button
+                variant="destructive"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
             </div>
             <Separator />
@@ -170,30 +198,44 @@ export function ComponentGrid() {
               </Button>
             </div>
             <div className="flex gap-4">
-              <Button size="small">
-                <PlusIcon className="w-2 h-2" />
+              <Button
+                size="small"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon className="w-2 h-2" />
               </Button>
-              <Button size="small" variant="secondary">
-                <PlusIcon />
+              <Button
+                size="small"
+                variant="secondary"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button size="small" variant="outline">
-                <PlusIcon />
+              <Button
+                size="small"
+                variant="outline"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button size="small" variant="ghost">
-                <PlusIcon />
+              <Button
+                size="small"
+                variant="ghost"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
-              <Button size="small" variant="destructive">
-                <PlusIcon />
+              <Button
+                size="small"
+                variant="destructive"
+                leftIcon={<PlusIcon />}
+                rightIcon={<MinusIcon />}
+              >
                 Icon
-                <MinusIcon />
               </Button>
             </div>
             <Separator />
@@ -216,24 +258,38 @@ export function ComponentGrid() {
             <Separator />
             {/* Loading Buttons */}
             <div className="flex gap-4">
-              <Button state="loading">
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Button
+                state="loading"
+                rightIcon={<Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              >
                 Loading...
               </Button>
-              <Button state="loading" variant="secondary">
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Button
+                state="loading"
+                rightIcon={<Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                variant="secondary"
+              >
                 Loading...
               </Button>
-              <Button state="loading" variant="outline">
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Button
+                state="loading"
+                rightIcon={<Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                variant="outline"
+              >
                 Loading...
               </Button>
-              <Button state="loading" variant="ghost">
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Button
+                state="loading"
+                rightIcon={<Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                variant="ghost"
+              >
                 Loading...
               </Button>
-              <Button state="loading" variant="destructive">
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Button
+                state="loading"
+                rightIcon={<Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                variant="destructive"
+              >
                 Loading...
               </Button>
             </div>
@@ -275,14 +331,16 @@ export function ComponentGrid() {
             <Button
               variant="outline"
               className="bg-green-500 hover:bg-green-600 text-white"
+              leftIcon={<Check className="mr-2 h-4 w-4" />}
             >
-              <Check className="mr-2 h-4 w-4" /> Success
+              Success
             </Button>
             <Button
               variant="outline"
               className="bg-red-500 hover:bg-red-600 text-white"
+              leftIcon={<X className="mr-2 h-4 w-4" />}
             >
-              <X className="mr-2 h-4 w-4" /> Error
+              Error
             </Button>
           </CardContent>
         </Card>

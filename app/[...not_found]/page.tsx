@@ -15,9 +15,14 @@ export default function ErrorPage() {
           changed, or is temporarily unavailable.
         </p>
         <div className="pt-4">
-          <Button isLink variant="link_left" asChild>
+          <Button
+            isLink
+            variant="link_left"
+            leftIcon={<ArrowLeft />}
+            iconAnimation="slide"
+            asChild
+          >
             <Link href="/" className="flex items-center group">
-              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to Home
             </Link>
           </Button>

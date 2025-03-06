@@ -80,8 +80,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : 'button'
-
     // Generate icon animation classes
     const getIconAnimationClass = (position: 'left' | 'right') => {
       if (iconAnimation === 'none') return ''
@@ -117,8 +115,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className
     )
 
-    return (
-      <Comp className={buttonClasses} ref={ref} {...props}>
+    // Create content with icons and children
+    const content = (
+      <>
         {leftIcon && (
           <span className={getIconAnimationClass('left')}>{leftIcon}</span>
         )}
@@ -126,7 +125,25 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {rightIcon && (
           <span className={getIconAnimationClass('right')}>{rightIcon}</span>
         )}
-      </Comp>
+      </>
+    )
+
+    // Return either Slot or button based on asChild prop
+    if (asChild) {
+      return (
+        <Slot className={buttonClasses} ref={ref} {...props}>
+          {/* Slot requires exactly ONE child element */}
+          <span className="inline-flex items-center justify-center gap-2">
+            {content}
+          </span>
+        </Slot>
+      )
+    }
+
+    return (
+      <button className={buttonClasses} ref={ref} {...props}>
+        {content}
+      </button>
     )
   }
 )

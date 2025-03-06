@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/footer'
 import { ThemeToggle } from '@/components/theme-toggle'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -38,20 +39,21 @@ export default function Home() {
               asChild
               variant="outline"
               className="flex items-center gap-2"
-            >
-              <Link
-                href="https://vercel.com/new/clone?repository-url=https://github.com/andrechandra/next-tailwind-starter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              leftIcon={
+                <Image
                   src="/vercel.svg"
                   alt="Vercel Logo"
                   width={20}
                   height={20}
                   className="w-4 h-4 invert dark:invert-0"
                 />
+              }
+            >
+              <Link
+                href="https://vercel.com/new/clone?repository-url=https://github.com/andrechandra/next-tailwind-starter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Deploy to Vercel
               </Link>
             </Button>
