@@ -21,7 +21,7 @@ const buttonVariants = cva(
         ghost: 'rounded-md hover:bg-accent hover:text-accent-foreground',
 
         // Link styles
-        link: 'text-primary underline-offset-60 hover:underline',
+        link: 'text-primary underline-offset-6 hover:underline',
         link_left:
           'text-primary relative w-fit before:absolute before:w-full before:bottom-0 before:left-0 before:border-b before:border-dotted before:border-black dark:before:border-white hover:before:opacity-0 before:transition-opacity before:duration-200 after:absolute after:w-full after:scale-x-0 after:h-[0.025rem] after:bottom-0 after:left-0 after:origin-left after:bg-black dark:after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-right',
         link_right:
@@ -57,6 +57,9 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   isExternal?: boolean
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
+  iconAnimation?: 'slide' | 'bounce' | 'fade' | 'scale' | 'none'
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -69,35 +72,62 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isLink = false,
       isExternal = false,
       asChild = false,
+      leftIcon,
+      rightIcon,
+      iconAnimation = 'none',
+      children,
       ...props
     },
     ref
   ) => {
     const Comp = asChild ? Slot : 'button'
 
-    // Memoize external class
-    const externalClass = React.useMemo(
-      () => (isExternal ? 'cursor-[var(--external-cursor)]' : ''),
-      [isExternal]
+    // Generate icon animation classes
+    const getIconAnimationClass = (position: 'left' | 'right') => {
+      if (iconAnimation === 'none') return ''
+
+      const baseClass = 'transition-transform duration-300 ease-in-out'
+
+      switch (iconAnimation) {
+        case 'slide':
+          return position === 'left'
+            ? `${baseClass} group-hover:-translate-x-1 group-focus:-translate-x-1`
+            : `${baseClass} group-hover:translate-x-1 group-focus:translate-x-1`
+        case 'bounce':
+          return `${baseClass} group-hover:animate-bounce`
+        case 'fade':
+          return 'transition-opacity duration-300 opacity-70 group-hover:opacity-100'
+        case 'scale':
+          return `${baseClass} group-hover:scale-110 group-focus:scale-110`
+        default:
+          return ''
+      }
+    }
+
+    // Combine all classes
+    const buttonClasses = cn(
+      buttonVariants({
+        variant,
+        size,
+        state,
+        isLink,
+      }),
+      isExternal ? 'cursor-[var(--external-cursor)]' : '',
+      'group', // Add group class for icon animations
+      className
     )
 
-    // Memoize the final class
-    const buttonClasses = React.useMemo(
-      () =>
-        cn(
-          buttonVariants({
-            variant,
-            size,
-            state,
-            isLink,
-            className,
-          }),
-          externalClass
-        ),
-      [variant, size, state, isLink, className, externalClass]
+    return (
+      <Comp className={buttonClasses} ref={ref} {...props}>
+        {leftIcon && (
+          <span className={getIconAnimationClass('left')}>{leftIcon}</span>
+        )}
+        {children}
+        {rightIcon && (
+          <span className={getIconAnimationClass('right')}>{rightIcon}</span>
+        )}
+      </Comp>
     )
-
-    return <Comp className={buttonClasses} ref={ref} {...props} />
   }
 )
 Button.displayName = 'Button'
