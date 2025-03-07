@@ -43,7 +43,10 @@ export function ComponentGrid() {
             </Button>
             <Separator orientation="vertical" />
             <Button isLink isExternal variant="link" asChild>
-              <Link href="/" className="flex items-center group">
+              <Link
+                href="https://andrechandra.vercel.app"
+                className="flex items-center group"
+              >
                 External Links
               </Link>
             </Button>
@@ -71,12 +74,18 @@ export function ComponentGrid() {
             </Button>
             <Separator orientation="vertical" />
             <Button isLink isExternal variant="link_right" asChild>
-              <Link href="/" className="flex items-center group">
+              <Link
+                href="https://andrechandra.vercel.app"
+                className="flex items-center group"
+              >
                 External Links
               </Link>
             </Button>
             <Button isLink isExternal variant="link_left" asChild>
-              <Link href="/" className="flex items-center group">
+              <Link
+                href="https://andrechandra.vercel.app"
+                className="flex items-center group"
+              >
                 External Links
               </Link>
             </Button>
@@ -123,7 +132,10 @@ export function ComponentGrid() {
               iconAnimation="slide"
               asChild
             >
-              <Link href="/" className="flex items-center group">
+              <Link
+                href="https://andrechandra.vercel.app"
+                className="flex items-center group"
+              >
                 External Links
               </Link>
             </Button>
@@ -135,7 +147,10 @@ export function ComponentGrid() {
               iconAnimation="slide"
               asChild
             >
-              <Link href="/" className="flex items-center group">
+              <Link
+                href="https://andrechandra.vercel.app"
+                className="flex items-center group"
+              >
                 External Links
               </Link>
             </Button>
@@ -364,7 +379,7 @@ export function ComponentGrid() {
           </CardHeader>
           <CardContent>
             <Button asChild>
-              <Link href="/404">Visit the 404 page</Link>
+              <Link href="/not_found">Visit the 404 page</Link>
             </Button>
           </CardContent>
         </Card>
