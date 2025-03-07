@@ -24,7 +24,7 @@ export default function Home() {
             <Button asChild>
               <Link href="/components">See all components</Link>
             </Button>
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild isExternal>
               <a
                 href="https://github.com/andrechandra/next-tailwind-starter"
                 target="_blank"
@@ -48,6 +48,7 @@ export default function Home() {
                   className="w-4 h-4 invert dark:invert-0"
                 />
               }
+              isExternal
             >
               <Link
                 href="https://vercel.com/new/clone?repository-url=https://github.com/andrechandra/next-tailwind-starter"

@@ -36,12 +36,16 @@ export function ComponentGrid() {
             <CardDescription>Link buttons with no style.</CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <Button isLink variant="link">
-              Internal Links
+            <Button isLink variant="link" asChild>
+              <Link href="/" className="flex items-center group">
+                Internal Links
+              </Link>
             </Button>
             <Separator orientation="vertical" />
-            <Button isLink isExternal variant="link">
-              External Links
+            <Button isLink isExternal variant="link" asChild>
+              <Link href="/" className="flex items-center group">
+                External Links
+              </Link>
             </Button>
           </CardContent>
         </Card>
@@ -55,18 +59,26 @@ export function ComponentGrid() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 flex-wrap">
-            <Button isLink variant="link_right">
-              Internal Links
+            <Button isLink variant="link_right" asChild>
+              <Link href="/" className="flex items-center group">
+                Internal Links
+              </Link>
             </Button>
-            <Button isLink variant="link_left">
-              Internal Links
+            <Button isLink variant="link_left" asChild>
+              <Link href="/" className="flex items-center group">
+                Internal Links
+              </Link>
             </Button>
             <Separator orientation="vertical" />
-            <Button isLink isExternal variant="link_right">
-              External Links
+            <Button isLink isExternal variant="link_right" asChild>
+              <Link href="/" className="flex items-center group">
+                External Links
+              </Link>
             </Button>
-            <Button isLink isExternal variant="link_left">
-              External Links
+            <Button isLink isExternal variant="link_left" asChild>
+              <Link href="/" className="flex items-center group">
+                External Links
+              </Link>
             </Button>
           </CardContent>
         </Card>

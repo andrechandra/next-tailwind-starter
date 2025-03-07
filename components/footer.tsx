@@ -11,8 +11,11 @@ export const Footer = () => {
           variant="link_right"
           asChild
           className="p-0 h-auto font-bold"
+          isExternal
         >
-          <Link href="https://github.com/andrechandra">Andre Chandra</Link>
+          <Link href="https://github.com/andrechandra" target="_blank">
+            Andre Chandra
+          </Link>
         </Button>
         . All rights reserved. <br />
       </b>

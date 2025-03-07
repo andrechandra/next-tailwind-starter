@@ -3,13 +3,11 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
-// Single variant configuration with conditional application
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        // Standard button styles
         default:
           'rounded-md bg-primary text-primary-foreground hover:bg-primary/90',
         destructive:
@@ -19,8 +17,6 @@ const buttonVariants = cva(
         secondary:
           'rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost: 'rounded-md hover:bg-accent hover:text-accent-foreground',
-
-        // Link styles
         link: 'text-primary underline-offset-6 hover:underline',
         link_left:
           'text-primary relative w-fit before:absolute before:w-full before:bottom-0 before:left-0 before:border-b before:border-dotted before:border-black dark:before:border-white hover:before:opacity-0 before:transition-opacity before:duration-200 after:absolute after:w-full after:scale-x-0 after:h-[0.025rem] after:bottom-0 after:left-0 after:origin-left after:bg-black dark:after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-right',
@@ -80,70 +76,67 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    // Generate icon animation classes
-    const getIconAnimationClass = (position: 'left' | 'right') => {
-      if (iconAnimation === 'none') return ''
+    const Comp = asChild ? Slot : 'button'
 
-      const baseClass = 'transition-transform duration-300 ease-in-out'
+    const leftIconClasses = cn(
+      iconAnimation === 'none'
+        ? ''
+        : 'transition-transform duration-300 ease-in-out',
+      iconAnimation === 'slide' &&
+        'group-hover:-translate-x-1 group-focus:-translate-x-1',
+      iconAnimation === 'bounce' && 'group-hover:animate-bounce',
+      iconAnimation === 'fade' &&
+        'transition-opacity duration-300 opacity-70 group-hover:opacity-100',
+      iconAnimation === 'scale' && 'group-hover:scale-110 group-focus:scale-110'
+    )
 
-      switch (iconAnimation) {
-        case 'slide':
-          return position === 'left'
-            ? `${baseClass} group-hover:-translate-x-1 group-focus:-translate-x-1`
-            : `${baseClass} group-hover:translate-x-1 group-focus:translate-x-1`
-        case 'bounce':
-          return `${baseClass} group-hover:animate-bounce`
-        case 'fade':
-          return 'transition-opacity duration-300 opacity-70 group-hover:opacity-100'
-        case 'scale':
-          return `${baseClass} group-hover:scale-110 group-focus:scale-110`
-        default:
-          return ''
-      }
-    }
+    const rightIconClasses = cn(
+      iconAnimation === 'none'
+        ? ''
+        : 'transition-transform duration-300 ease-in-out',
+      iconAnimation === 'slide' &&
+        'group-hover:translate-x-1 group-focus:translate-x-1',
+      iconAnimation === 'bounce' && 'group-hover:animate-bounce',
+      iconAnimation === 'fade' &&
+        'transition-opacity duration-300 opacity-70 group-hover:opacity-100',
+      iconAnimation === 'scale' && 'group-hover:scale-110 group-focus:scale-110'
+    )
 
-    // Combine all classes
     const buttonClasses = cn(
-      buttonVariants({
-        variant,
-        size,
-        state,
-        isLink,
-      }),
+      buttonVariants({ variant, size, state, isLink }),
       isExternal ? 'cursor-[var(--external-cursor)]' : '',
-      'group', // Add group class for icon animations
+      'group',
       className
     )
 
-    // Create content with icons and children
-    const content = (
-      <>
-        {leftIcon && (
-          <span className={getIconAnimationClass('left')}>{leftIcon}</span>
-        )}
-        {children}
-        {rightIcon && (
-          <span className={getIconAnimationClass('right')}>{rightIcon}</span>
-        )}
-      </>
-    )
-
-    // Return either Slot or button based on asChild prop
     if (asChild) {
+      const child = React.Children.only(children) as React.ReactElement<{
+        children?: React.ReactNode
+      }>
+
       return (
-        <Slot className={buttonClasses} ref={ref} {...props}>
-          {/* Slot requires exactly ONE child element */}
-          <span className="inline-flex items-center justify-center gap-2">
-            {content}
-          </span>
-        </Slot>
+        <Comp className={buttonClasses} ref={ref} {...props}>
+          {React.cloneElement(
+            child,
+            {},
+            <>
+              {leftIcon && <span className={leftIconClasses}>{leftIcon}</span>}
+              {child.props.children}
+              {rightIcon && (
+                <span className={rightIconClasses}>{rightIcon}</span>
+              )}
+            </>
+          )}
+        </Comp>
       )
     }
 
     return (
-      <button className={buttonClasses} ref={ref} {...props}>
-        {content}
-      </button>
+      <Comp className={buttonClasses} ref={ref} {...props}>
+        {leftIcon && <span className={leftIconClasses}>{leftIcon}</span>}
+        {children}
+        {rightIcon && <span className={rightIconClasses}>{rightIcon}</span>}
+      </Comp>
     )
   }
 )
