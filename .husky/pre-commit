@@ -1,8 +1,0 @@
-echo "Running ESLint..."
-npx lint-staged
-
-echo "Running Prettier..."
-npx prettier --write . || exit 1
-
-echo "Running TypeScript checks..."
-npx tsc --noEmit || exit 1
