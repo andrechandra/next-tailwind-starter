@@ -2,7 +2,10 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
-export default function ErrorPage() {
+// Native Next.js App Router 404 boundary. Renders for any unmatched route with
+// a proper 404 status — replaces the old `[...not_found]` catch-all hack, which
+// conflicted with Cache Components (its async `params` split page vs metadata).
+export default function NotFound() {
   return (
     <main className="min-h-screen bg-background flex items-center justify-center">
       <div className="text-center space-y-6">

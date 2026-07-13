@@ -22,7 +22,11 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild>
-              <Link href="/components">See all components</Link>
+              {/* transitionTypes drives the native React 19 / Next 16 View
+                  Transition applied during this client navigation. */}
+              <Link href="/components" transitionTypes={['slide']}>
+                See all components
+              </Link>
             </Button>
             <Button variant="outline" asChild isExternal>
               <a
